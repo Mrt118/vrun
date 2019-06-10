@@ -1,0 +1,178 @@
+<div class="wrapper magin-l-18em">
+
+  <div class="headertext">
+    <div class="hdtext float-l">
+      <p class="color-3">Overview</p>
+      <h2>Organize Name</h2>
+    </div>
+    <div class="hdtext float-l">
+      <div class="margin-t-r">
+        <a routerLink="/create" routerLinkActive="active">
+          <button class="float-r btn btn-blueStye">Create Event</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ogzbar">
+    <div class="miniCard margin-r3p">
+      <div class="headerMinicard">
+        <p class="color-3">Totle Events</p>
+      </div>
+      <div class="content-l fontsize-l">
+        {{ sumEvent }}
+      </div>
+      <div class="content-r text-right fontsize-l color-3">
+          <i class="fas fa-home"></i>
+      </div>
+    </div>
+
+    <div class="miniCard margin-r3p">
+      <div class="headerMinicard">
+        <p class="color-3">Totle Distance ( Km. )</p>
+      </div>
+      <div class="content-l fontsize-l">
+        -
+      </div>
+      <div class="content-r text-right fontsize-l color-3">
+        <i class="fas fa-location-arrow"></i>
+      </div>
+    </div>
+
+    <div class="miniCard">
+      <div class="headerMinicard">
+        <p class="color-3">Rate ( no vote )</p>
+      </div>
+      <div class="content-l fontsize-l">
+        -
+      </div>
+      <div class="content-r text-right fontsize-l color-3">
+          <i class="fas fa-vote-yea"></i>
+      </div>
+    </div>
+
+  </div><!--  end ogzbar -->
+
+
+
+  <div class="ogzbar">
+
+    <div class="middleCard wmdCard100 margin-r3p">
+
+      <div class="headmiddleCard">
+        <div class="hdtext float-l fontsize-m">
+          <p>Events</p>
+        </div>
+        <div class="hdtext float-l">
+          <div class="text-right fontsize-s link-readall">
+            <!-- <a href="#">Read All</a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="contentmiddleCard" *ngFor="let e of all">
+        <div class="eventCon">
+          <div class="eventPic float-l"></div>
+          <div class="eventName float-l">
+            <h3>{{e.eventName}}</h3>
+            <div class="color-3 fontsize-s">
+              {{ e.startDate | date:'dd/MM/yy' }} - {{e.endDate | date:'dd/MM/yy'}}
+            </div>
+          </div>
+          <!-- <div class="float-r text-right color-3">
+            status: {{ e.status }}
+          </div> -->
+        </div>
+        <div class="clear eventCon">
+          <div class="eventStat text-center color-3">
+            <div class="eventStat-d">
+                <i class="far fa-eye"></i>
+            </div>
+            <div class="eventStat-d fontsize-s">
+              {{ e.stat.like }} like
+            </div>
+          </div>
+          <div class="eventStat text-center color-3">
+            <div class="eventStat-icon">
+                <i class="far fa-user-circle"></i>
+            </div>
+            <div class="eventStat-d fontsize-s">
+              {{ e.stat.join }} People Join
+            </div>
+          </div>
+          <div class="eventStat text-center color-3">
+            <div class="eventStat-icon">
+                <i class="far fa-clock"></i>
+            </div>
+            <div class="eventStat-d fontsize-s">
+              {{ e.runTime }}
+            </div>
+          </div>
+          <div class="eventStat text-center color-3">
+            <div class="eventStat-icon">
+              <i class="fas fa-asterisk"></i>
+            </div>
+            <div class="eventStat-d fontsize-s">
+              {{ e.status }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- <div class="middleCard wmdCard40">
+      <div class="headmiddleCard">
+        <div class="hdtext float-l fontsize-m">
+          <p>Reveiw</p>
+        </div>
+        <div class="hdtext float-l">
+          <div class="text-right fontsize-s link-readall">
+            <a href="#">Read All</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="eventCon">
+        <div class="eventPic float-l"></div>
+        <div class="eventName float-l overview-hide">
+          <p class="">สนุกจ้า สนุกคนเดียวอ่ะแกรรรรรรรรรรรรรรร</p>
+          <div class=" fontsize-s color-3">Rate 4</div>
+        </div>
+      </div>
+
+      <div class="eventCon">
+        <div class="eventPic float-l"></div>
+        <div class="eventName float-l overview-hide">
+          <p class="">สนุกมากค่า เดี๋ยวจะมาวิ่งอีก</p>
+          <div class=" fontsize-s color-3">Rate 5</div>
+        </div>
+      </div>
+
+      <div class="eventCon">
+        <div class="eventPic float-l"></div>
+        <div class="eventName float-l overview-hide">
+          <p class="">ส่งเสื้อช้ามากเลย :(</p>
+          <div class=" fontsize-s color-3">Rate 3</div>
+        </div>
+      </div>
+
+      <div class="eventCon">
+        <div class="eventPic float-l"></div>
+        <div class="eventName float-l overview-hide">
+          <p class="">ชอบของรางวัลมากเลยครับ</p>
+          <div class=" fontsize-s color-3">Rate 4.5</div>
+        </div>
+      </div>
+
+      <div class="eventCon">
+        <div class="eventPic float-l"></div>
+        <div class="eventName float-l overview-hide">
+          <p class="">จัดบ่อยๆ นะ</p>
+          <div class=" fontsize-s color-3">Rate 4.5</div>
+        </div>
+      </div>
+
+    </div> -->
+  </div><!--  end ogzbar -->
+</div>

@@ -1,0 +1,12 @@
+.logo {
+  width: 7em;
+  height: 7em;
+  margin: 4em auto;
+  /* border-radius: 20em; */
+  /* background-color: #2c7be5; */
+}
+.logo {
+  background-image: url('assets/images/logo-bb.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}

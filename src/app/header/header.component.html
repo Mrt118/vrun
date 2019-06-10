@@ -1,0 +1,168 @@
+<!-- Navigation -->
+<div id="top-menu-sticky">
+  <div class="magin-l-18em top">
+    <div class="float-l subbarBel">
+      <a (click)="alertDropDown()">
+        <span><i class="fas fa-bell"></i></span>
+      </a>
+      <div *ngIf='bel' class="bel">{{ numBel }}</div>
+      <div *ngIf='alertShow' class="subBel">
+        <a href="#">
+          <div class="subbelCon">
+              <i class="far fa-hand-point-right float-l iconBel text-center fontsize-m"></i>
+            <div class="float-l subbelCon-r">
+              <div class="subbelCon-t fontsize-m">นักวิ่ง A</div>
+              <div class="subbelCon-b fontsize-s">ได้สมัครเข้าร่วมกิจกรรมของคุณ</div>
+            </div>
+          </div>
+          <div class="subbelCon">
+              <i class="far fa-hand-point-right float-l iconBel text-center fontsize-m"></i>
+            <div class="float-l subbelCon-r">
+              <div class="subbelCon-t fontsize-m">นักวิ่ง B</div>
+              <div class="subbelCon-b fontsize-s">กด Like กิจกรรมของคุณ</div>
+            </div>
+          </div>
+          <div class="subbelCon">
+              <i class="far fa-hand-point-right float-l iconBel text-center fontsize-m"></i>
+            <div class="float-l subbelCon-r">
+              <div class="subbelCon-t fontsize-m">นักวิ่ง A</div>
+              <div class="subbelCon-b fontsize-s">ได้สมัครเข้าร่วมกิจกรรมของคุณ</div>
+            </div>
+          </div>
+          <div class="subbelCon">
+              <i class="far fa-hand-point-right float-l iconBel text-center fontsize-m"></i>
+            <div class="float-l subbelCon-r">
+              <div class="subbelCon-t fontsize-m">นักวิ่ง B</div>
+              <div class="subbelCon-b fontsize-s">กด Like กิจกรรมของคุณ</div>
+            </div>
+          </div>
+          <div class="subbelCon">
+              <i class="far fa-hand-point-right float-l iconBel text-center fontsize-m"></i>
+            <div class="float-l subbelCon-r">
+              <div class="subbelCon-t fontsize-m">นักวิ่ง A</div>
+              <div class="subbelCon-b fontsize-s">ได้สมัครเข้าร่วมกิจกรรมของคุณ</div>
+            </div>
+          </div>
+          <div class="subbelCon">
+              <i class="far fa-hand-point-right float-l iconBel text-center fontsize-m"></i>
+            <div class="float-l subbelCon-r">
+              <div class="subbelCon-t fontsize-m">นักวิ่ง B</div>
+              <div class="subbelCon-b fontsize-s">กด Like กิจกรรมของคุณ</div>
+            </div>
+          </div>
+          <div class="subbelCon">
+              <i class="far fa-hand-point-right float-l iconBel text-center fontsize-m"></i>
+            <div class="float-l subbelCon-r">
+              <div class="subbelCon-t fontsize-m">นักวิ่ง A</div>
+              <div class="subbelCon-b fontsize-s">ได้สมัครเข้าร่วมกิจกรรมของคุณ</div>
+            </div>
+          </div>
+          <div class="subbelCon">
+              <i class="far fa-hand-point-right float-l iconBel text-center fontsize-m"></i>
+            <div class="float-l subbelCon-r">
+              <div class="subbelCon-t fontsize-m">นักวิ่ง B</div>
+              <div class="subbelCon-b fontsize-s">กด Like กิจกรรมของคุณ</div>
+            </div>
+          </div>
+          <div class="subbelCon">
+              <i class="far fa-hand-point-right float-l iconBel text-center fontsize-m"></i>
+            <div class="float-l subbelCon-r">
+              <div class="subbelCon-t fontsize-m">นักวิ่ง A</div>
+              <div class="subbelCon-b fontsize-s">ได้สมัครเข้าร่วมกิจกรรมของคุณ</div>
+            </div>
+          </div>
+          <div class="subbelCon">
+              <i class="far fa-hand-point-right float-l iconBel text-center fontsize-m"></i>
+            <div class="float-l subbelCon-r">
+              <div class="subbelCon-t fontsize-m">นักวิ่ง B</div>
+              <div class="subbelCon-b fontsize-s">กด Like กิจกรรมของคุณ</div>
+            </div>
+          </div>
+          <div class="subbelCon">
+              <i class="far fa-hand-point-right float-l iconBel text-center fontsize-m"></i>
+            <div class="float-l subbelCon-r">
+              <div class="subbelCon-t fontsize-m">นักวิ่ง A</div>
+              <div class="subbelCon-b fontsize-s">ได้สมัครเข้าร่วมกิจกรรมของคุณ</div>
+            </div>
+          </div>
+          <div class="subbelCon">
+              <i class="far fa-hand-point-right float-l iconBel text-center fontsize-m"></i>
+            <div class="float-l subbelCon-r">
+              <div class="subbelCon-t fontsize-m">นักวิ่ง B</div>
+              <div class="subbelCon-b fontsize-s">กด Like กิจกรรมของคุณ</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <span class="float-l margin-l-r">|</span>
+    <div class="float-l subbar">
+        <a (click)="toggleDropDown()">
+          <div class="ogz-profile"></div>
+          ramatee
+          <span><i class="fas fa-angle-down hover-up"></i></span>
+        </a>
+        <div *ngIf='showDropDown' class="submenuBar">
+          <a href="#">
+            <div class="submenuCon">Profile</div>
+          </a>
+          <a href="#">
+            <div class="submenuCon">Setting</div>
+          </a>
+          <a href="#">
+            <div class="submenuCon">Log Out</div>
+          </a>
+
+        </div>
+    </div>
+
+
+  </div>
+
+</div>
+<div id="side-menu-sticky">
+  <div class="side">
+
+      <div class="logo">
+
+      </div>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <span><i class="fas fa-home"></i></span>
+        Home
+      </a>
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span><i class="fas fa-chart-line"></i></span>
+        Dashboard
+      </a>
+      <!-- <a routerLink="/payment" routerLinkActive="active">
+        <span><i class="fas fa-credit-card"></i></span>
+        Payment
+      </a> -->
+      <!-- <a routerLink="/delivery" routerLinkActive="active">
+        <span><i class="fas fa-truck"></i></span>
+        Delivery
+      </a> -->
+      <a routerLink="/yourevent" routerLinkActive="active">
+        <span><i class="far fa-calendar-alt"></i></span>
+        Your Events
+      </a>
+      <a routerLink="/create" routerLinkActive="active">
+        <span><i class="far fa-calendar-plus"></i></span>
+        Create Event
+      </a>
+  </div>
+  <div class="side-btm">
+      <a routerLink="/setting" routerLinkActive="active">
+        <span><i class="fas fa-sliders-h"></i></span>
+        Setting
+      </a>
+      <a routerLink="/logout" routerLinkActive="active">
+        <span><i class="fas fa-sign-out-alt"></i></span>
+        Log Out
+      </a>
+  </div>
+
+
+
+</div>

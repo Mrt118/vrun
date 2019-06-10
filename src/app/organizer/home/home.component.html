@@ -1,0 +1,239 @@
+<div class="wrapper magin-l-18em">
+  <div class="headertext">
+    <div class="hdtext float-l">
+      <p class="color-3">Dashboard</p>
+      <h2>Statistics</h2>
+    </div>
+    <div class="hdtext float-l text-right">
+      <p class="color-3">Totle Distance</p>
+      <h2>4,358.95 Km.</h2>
+    </div>
+  </div>
+
+  <div class="headertext">
+
+    <div class="slectBar margin-r3p width50">
+
+      <div class="select">
+        <select name="event-s" id="event-s">
+          <option>Choose Event Name</option>
+          <option value="1">VR Run Near House # 1: วิ่งแถวบ้าน</option>
+          <option value="2">VR Run Near House # 2 วิ่งจ้า</option>
+          <option value="3">VR Run Near House # 2 ก็วิ่งดิคร้าบ</option>
+        </select>
+      <br>
+      </div>
+    </div>
+    <div class="slectBar margin-r3p">
+
+      <div class="select">
+        <select name="distance-s" id="distance-s">
+          <option>Choose Distance</option>
+          <option value="1">3 Km.</option>
+          <option value="2">5 Km.</option>
+          <option value="3">10 Km.</option>
+        </select>
+      <br>
+      </div>
+    </div>
+    <div class="slectBar">
+
+      <div class="select">
+        <select name="sort-s" id="sort-s">
+          <option>Sort by</option>
+          <option value="1">BIB</option>
+          <option value="2">Status</option>
+          <option value="3">Distance</option>
+          <option value="3">Rank</option>
+        </select>
+      <br>
+      </div>
+    </div>
+  </div> <!-- end ogzbar -->
+
+  <div class="ogzbar">
+      <div class="miniCard margin-r3p">
+        <div class="headerMinicard">
+          <p class="color-3">People Join</p>
+        </div>
+        <div class="content-l fontsize-l">
+          318
+        </div>
+        <div class="content-r text-right fontsize-l color-3">
+            <i class="far fa-user-circle"></i>
+        </div>
+      </div>
+
+      <div class="miniCard margin-r3p">
+        <div class="headerMinicard">
+          <p class="color-3">Distance ( Km. )</p>
+        </div>
+        <div class="content-l fontsize-l">
+          3,517.12
+        </div>
+        <div class="content-r text-right fontsize-l color-3">
+          <i class="fas fa-location-arrow"></i>
+        </div>
+      </div>
+
+      <div class="miniCard">
+        <div class="headerMinicard">
+          <p class="color-3">Rate ( 318 vote )</p>
+        </div>
+        <div class="content-l fontsize-l">
+          4.4
+        </div>
+        <div class="content-r text-right fontsize-l color-3">
+            <i class="fas fa-vote-yea"></i>
+        </div>
+      </div>
+
+    </div><!--  end ogzbar -->
+
+    <div class="ogzbar">
+
+    <div class="middleCard wmdCard60 margin-r3p">
+
+      <div class="headmiddleCard">
+        <div class="hdtext float-l fontsize-m">
+          <p>Runner</p>
+        </div>
+        <div class="hdtext float-l">
+          <div class="text-right fontsize-s link-readall">
+            <a href="#">Read All</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contentmiddleCard">
+        <div class="eventCon">
+          
+        </div>
+      </div>
+</div>
+
+<div class="middleCard wmdCard40">
+    <div class="headmiddleCard">
+      <div class="hdtext float-l fontsize-m">
+        <p>Finish Run</p>
+      </div>
+      <div class="hdtext float-l">
+        <div class="text-right fontsize-s link-readall">
+          <!-- <a href="#">Read All</a> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="eventCon circle-bar-w padding-l-1em">
+        <circle-progress
+        [percent]="returnPersent()"
+        [radius]="100"
+        [animation]="true"
+        [animationDuration]="300"
+        >
+        </circle-progress>
+    </div>
+</div>
+
+
+<div class="middleCard wmdCard40">
+    <div class="headmiddleCard">
+      <div class="hdtext float-l fontsize-m">
+        <p>Rank</p>
+      </div>
+      <div class="hdtext float-l">
+        <div class="text-right fontsize-s link-readall">
+          <a href="#">Read All</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="eventCon">
+      <div class="eventPic float-l text-center line-h">#1</div>
+      <div class="eventName float-l">
+        <p>Kankanjai Derawat</p>
+        <div class=" fontsize-s color-3">20.36 Km.</div>
+      </div>
+    </div>
+
+    <div class="eventCon">
+      <div class="eventPic float-l text-center line-h">#2</div>
+      <div class="eventName float-l">
+        <p>Kankanjai Derawat</p>
+        <div class=" fontsize-s color-3">20.36 Km.</div>
+      </div>
+    </div>
+    <div class="eventCon">
+      <div class="eventPic float-l text-center line-h">#3</div>
+      <div class="eventName float-l">
+        <p>Kankanjai Derawat</p>
+        <div class=" fontsize-s color-3">20.36 Km.</div>
+      </div>
+    </div>
+    <div class="eventCon">
+        <div class="float-l text-center margin-r2">
+          <p> #4 </p>
+        </div>
+        <div class="eventName float-l">
+          <p>Kankanjai Derawat</p>
+          <div class=" fontsize-s color-3">20.36 Km.</div>
+        </div>
+      </div>
+    <div class="eventCon">
+        <div class="float-l text-center margin-r2">
+          <p> #5 </p>
+        </div>
+        <div class="eventName float-l">
+          <p>Kankanjai Derawat</p>
+          <div class=" fontsize-s color-3">20.36 Km.</div>
+        </div>
+      </div>
+
+    <div class="eventCon">
+      <div class="float-l text-center margin-r2">
+        <p> #6 </p>
+      </div>
+      <div class="eventName float-l">
+        <p>Kankanjai Derawat</p>
+        <div class=" fontsize-s color-3">20.36 Km.</div>
+      </div>
+    </div>
+    <div class="eventCon">
+      <div class="float-l text-center margin-r2">
+        <p> #7 </p>
+      </div>
+      <div class="eventName float-l">
+        <p>Kankanjai Derawat</p>
+        <div class=" fontsize-s color-3">20.36 Km.</div>
+      </div>
+    </div>
+    <div class="eventCon">
+      <div class="float-l text-center margin-r2">
+        <p> #8 </p>
+      </div>
+      <div class="eventName float-l">
+        <p>Kankanjai Derawat</p>
+        <div class=" fontsize-s color-3">20.36 Km.</div>
+      </div>
+    </div>
+    <div class="eventCon">
+      <div class="float-l text-center margin-r2">
+        <p> #9 </p>
+      </div>
+      <div class="eventName float-l">
+        <p>Kankanjai Derawat</p>
+        <div class=" fontsize-s color-3">20.36 Km.</div>
+      </div>
+    </div>
+    <div class="eventCon">
+      <div class="float-l text-center margin-r2">
+        <p> #10 </p>
+      </div>
+      <div class="eventName float-l">
+        <p>Kankanjai Derawat</p>
+        <div class=" fontsize-s color-3">20.36 Km.</div>
+      </div>
+    </div>
+
+  </div>
+</div><!--  end ogzbar -->

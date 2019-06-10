@@ -1,0 +1,340 @@
+
+<div class="wrapper magin-l-18em">
+    <div class="headertext">
+        <div class="hdtext float-l">
+          <p class="color-3">Create Event</p>
+          <h2>General Information 1</h2>
+        </div>
+        <div class="hdtext float-l text-right">
+          <p class="color-3">Process</p>
+          <h2>0-0-0-0</h2>
+        </div>
+      </div>
+  <div class="ogzbar formBox">
+
+    <h3>ข้อมูลทั่วไป</h3>
+
+    <form [formGroup]="eventForm" (ngSubmit)="createEvent()" enctype="multipart/form-data">
+
+        <div class="step step-1">
+
+          <div class="formGroup">
+            <div class="headerInput" >ชื่อกิจกรรม *</div>
+              <input type="text" id="eventName" formControlName="eventName" placeholder="Event Name" />
+            <div [ngClass]="{'errortext' : e.errors &&
+            ( e.touched || e.dirty)}"></div>
+              <span class="err margin-t05" *ngIf=" e.errors &&
+              ( e.touched || e.dirty)">
+                <div *ngIf="e.errors">
+                  <br>
+                  Event name is required
+                </div>
+              </span>
+
+          </div>
+          <div class="formGroup">
+            <div class="headerInput">รายละเอียดอย่างย่อ</div>
+            <input type="text" formControlName="description" placeholder="Description"/>
+            <!-- <div class="float-r margin-t-r fontsize-s color-3">0/120</div> -->
+            <div [ngClass]="{'errortext' : d.errors}"></div>
+              <span class="err margin-t05" *ngIf=" d.errors">
+                <div *ngIf="d.errors">
+                  <br>
+                  <div class="float-r margin-t-r fontsize-s color-3">{{ descriptionLength }}/120</div>
+                </div>
+              </span>
+          </div>
+          <div class="formGroup float-l">
+            <div class="headerInput">เริ่มวันที่ *</div>
+            <input type="date" formControlName="startDate" placeholder="Start Date" />
+            <div [ngClass]="{'errortext' : s.errors &&
+            ( s.touched || s.dirty)}"></div>
+              <span class="err margin-t05" *ngIf=" s.errors &&
+              ( s.touched || s.dirty)">
+                <div *ngIf="s.errors">
+                  <br>
+                  Event name is required
+                </div>
+              </span>
+          </div>
+          <div class="formGroup float-l">
+            <div class="headerInput">จบวันที่ *</div>
+            <input type="date" formControlName="endDate" placeholder="End Date" />
+            <div [ngClass]="{'errortext' : n.errors && ( n.touched || n.dirty)}"></div>
+              <span class="err margin-t05" *ngIf=" n.errors && ( n.touched || n.dirty )">
+                <div *ngIf="n.errors">
+                  <br>
+                  Event name is required
+                </div>
+              </span>
+          </div>
+          <div class="clear"></div>
+          <div class="formGroup">
+            <div class="headerInput">เป้าหมายหลักในการจัด *</div>
+            <div class="select width50">
+              <select formControlName="goldofrun">
+                <option value="" disabled>---เลือกเป้าหมาย---</option>
+                <option *ngFor="let g of goldofruns" [ngValue]="g">{{ g }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="formGroup">
+            <div class="margin-t-r">
+                <button type="button" class="float-r btn btn-blueStye">Next</button>
+            </div>
+          </div>
+
+        </div>
+        <!-- End Step 1 -->
+
+        <div class="step step-2">
+          <div class="formGroup" formGroupName="distances">
+            <p>ประเภทการแข่งขัน</p>
+            <div class="formGroup float-l width25">
+                <div class="headerInput padding-l-t">ระยะทาง</div>
+                <div class="clear"></div>
+              <div class="float-l width50">
+                <input type="text" placeholder="10" formControlName="distance" />
+              </div>
+              <div class="float-l margin-l-1em margin-t05">Km.</div>
+            </div>
+            <div class="formGroup float-l width25">
+                <div class="headerInput padding-l-t margin-l">ค่าสมัคร</div>
+                <div class="clear"></div>
+              <div class="float-l magin-l-1em">
+                <input type="number" placeholder="100" min="0" formControlName="price" /> ฿
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="formGroup">
+            <div class="headerInput">รูปแบบการเก็บระยะ</div>
+            <div class="float-l">
+              <label class="container">Single Time
+                <input type="radio" formControlName="runTime" value="Single Time" checked="checked" required>
+                <span class="checkmark"></span> <br>
+                <small class="color-3">วิ่งรอบเดียวครบระยะ</small>
+              </label>
+            </div>
+            <div class="float-l">
+              <label class="container">Multiple Times
+                <input type="radio" value="Multiple Times" formControlName="runTime">
+                <span class="checkmark"></span> <br>
+                <small class="color-3">สะสมการวิ่งจนกว่าจะครบระยะ</small>
+              </label>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="formGroup">
+            <small class="color-3">
+              *** ค่าบริการจะคิด 5% จากค่าสมัคร ในกรณีที่จัดทำเพื่อการกุศล จะไม้มีการเรียกเก็บค่าบริการ
+            </small>
+            <div class="clear"></div>
+            <input type="checkbox" (click)="showData()"/>ยอมรับเงื่อนไข
+
+          </div>
+
+
+          <div class="formGroup">
+            <div class="margin-t-r">
+              <a href="#">
+                <button type="button" class="float-r btn btn-blueStye" [disabled]="mySwitch">Next</button>
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <!-- End Step 2 -->
+
+        <div class="step step-3">
+
+          <div class="formGroup">
+            <div class="headerInput">รูปภาพปก *</div>
+            <p class="fontsize-s color-3">** 1024 x 1024 or less more 5 mb **</p><br>
+
+            <input type="file" name="fileBg" id="fileBg" class="" (change)="onFileSelected($event)" />
+            <label for="fileBg">
+              <i class="far fa-image"></i>
+              <!-- <p class="fontsize-s text-center color-3">Choose a file</p> -->
+            </label>
+
+          </div>
+          <div class="formGroup">
+            <div class="headerInput">รายละเอียดกิจกรรม *</div>
+            <textarea class="textarea" formControlName="detailEvent"  placeholder="Detail" required></textarea>
+          </div>
+          <div class="formGroup">
+            <div class="headerInput">เงื่อนไขการเข้าร่วม</div>
+            <textarea class="textarea" formControlName="detailJoin"  placeholder="Detail"></textarea>
+          </div>
+          <div class="formGroup">
+            <div class="headerInput">เงื่อนไขการรับรางวัล *</div>
+            <textarea class="textarea" formControlName="detailAward" placeholder="Detail" required></textarea>
+          </div>
+
+          <div class="formGroup">
+            <div class="margin-t-r">
+
+                <button type="button" class="float-r btn btn-blueStye">Next</button>
+
+            </div>
+          </div>
+        </div>
+        <!-- End Step 3 -->
+
+        <div class="step step-4">
+
+          <div class="formGroup">
+            <div class="headerInput">รูปแบบของรางวัล</div>
+            <div class="float-l">
+              <label class="container">มี
+                <input type="radio" name="aword" (click)="haveb_f()"  value="true">
+                <span class="checkmark"></span> <br>
+                <!-- <small class="color-3">วิ่งรอบเดียวครบระยะ</small> -->
+              </label>
+            </div>
+            <div class="float-l">
+              <label class="container">ไม่มี
+                <input type="radio" name="aword"  value="false" (click)="haveb()" checked="checked" required>
+                <span class="checkmark"></span> <br>
+                <!-- <small class="color-3">สะสมการวิ่งจนกว่าจะครบระยะ</small> -->
+              </label>
+            </div>
+          </div>
+          <div class="clear"></div>
+
+          <div class="b" [hidden]="before">
+            <div class="float-l">
+              <label class="container">เหรียญดิจิตอล
+                <input type="checkbox" checked="checked" (click)="showdigitalC()" required>
+                <span class="boxcheckmark"></span>
+              </label>
+            </div>
+            <div class="float-l">
+              <label class="container">เสื้อกิจกรรม
+                <input type="checkbox" (click)="showshirtC()">
+                <span class="boxcheckmark"></span>
+              </label>
+            </div>
+            <div class="float-l">
+              <label class="container">ถ้วยรางวัล
+                <input type="checkbox" (click)="showcupC()">
+                <span class="boxcheckmark"></span>
+              </label>
+            </div>
+            <div class="float-l">
+              <label class="container">เหรียญรางวัล
+                <input type="checkbox" (click)="showcoinC()">
+                <span class="boxcheckmark"></span>
+              </label>
+            </div>
+            <div class="float-l">
+              <label class="container">เงินรางวัล
+                <input type="checkbox" (click)="showmoneyC()">
+                <span class="boxcheckmark"></span>
+              </label>
+            </div>
+
+            <div class="clear"></div>
+
+            <div formGroupName="awords">
+              <div class="formGroup" formGroupName="aDigiCoin" [hidden]="digitalC">
+                  <div class="headerInput">รูปแบบเหรียญดิจิตอล *</div>
+                  <p class="fontsize-s color-3">** 1024 x 1024 or less more 5 mb and only png file.**</p><br>
+                    <div class="float-l width25">
+                      <input type="file" name="fileDigicoin" id="fileDigicoin" class="" (change)="onFileSelected2($event)"/>
+                      <label for="fileDigicoin">
+                        <i class="far fa-image"></i>
+                        <!-- <p class="fontsize-s text-center color-3">Choose a file</p> -->
+                      </label>
+                    </div>
+                    <div class="float-l">
+                      <input type="text" formControlName="name" placeholder="Digital Coin Name"/>
+                      <input type="text" formControlName="description" placeholder="Detail"/>
+                    </div>
+
+                    <div class="clear"></div>
+              </div>
+
+              <div class="formGroup" [hidden]="shirtC">
+                  <div class="headerInput">รูปแบบเสื้อ *</div>
+                  <input type="text" formControlName="aShirt" placeholder="Detail"/>
+              </div>
+
+              <div class="formGroup" [hidden]="shirtC">
+                  <div class="headerInput">ขนาดเสื้อ *</div>
+                  <input type="text" formControlName="aSizeShirt" placeholder="Detail"/>
+              </div>
+
+              <div class="formGroup" [hidden]="cupC">
+                  <div class="headerInput">รูปแบบถ้วยรางวัล *</div>
+                  <input type="text" formControlName="aCup" placeholder="Detail"/>
+              </div>
+
+              <div class="formGroup" [hidden]="coinC">
+                  <div class="headerInput">รูปแบบเหรียญรางวัล *</div>
+                  <input type="text" formControlName="aCoin" placeholder="Detail"/>
+              </div>
+
+              <div class="formGroup" [hidden]="moneyC">
+                  <div class="headerInput">เงินรางวัล *</div>
+                  <input type="text" formControlName="aMoney" placeholder="Detail"/>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="formGroup">
+            <div class="margin-t-r">
+              <a href="#">
+                <button type="button" class="float-r btn btn-blueStye">Next</button>
+              </a>
+            </div>
+          </div>
+
+
+        </div>
+          <!-- End Step 4 -->
+
+        <div class="step step-5">
+
+          <div class="formGroup" >
+            <div class="headerInput">รูปแบบการจัดส่ง</div>
+            <div class="float-l">
+              <label class="container">ไม่มีค่าจัดส่ง / จัดส่งฟรี
+                <input type="radio" name="deliPrice" checked="checked" (click)="sendFree()" value=0>
+                <span class="checkmark">
+                </span> <br>
+                <!-- <small class="color-3">วิ่งรอบเดียวครบระยะ</small> -->
+              </label>
+            </div>
+            <div class="float-l">
+              <label class="container">ค่าจัดส่งเพิ่มเติม
+                <input type="radio" name="deliPrice" (click)="sendPrice()">
+                <span class="checkmark"></span> <br>
+                <!-- <small class="color-3">สะสมการวิ่งจนกว่าจะครบระยะ</small> -->
+              </label>
+            </div>
+                <div class="float-l" [hidden]="send" >
+                  <input type="number" formControlName="deliveryPrice" value=0 placeholder="100" min="0" required/> ฿
+                </div>
+          </div>
+          <div class="clear"></div>
+
+          <div class="formGroup">
+            <div class="margin-t-r">
+              <button type="submit" class="float-r btn btn-blueStye">Submit</button>
+            </div>
+          </div>
+
+
+        </div>
+          <!-- End Step 5 -->
+
+  </form>
+
+  </div>
+</div>

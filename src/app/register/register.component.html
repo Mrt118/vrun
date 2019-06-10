@@ -1,0 +1,36 @@
+<div class="wrapper magin-l-18em">
+
+    <h1>this regis is activated</h1>
+    <form #reGis="ngForm" (submit)="postUser(reGis.value)">
+      <div class="formGroup">
+          <div class="headerInput">Username</div>
+          <input ngModel name ="username" type="text" placeholder="username"><br>
+        </div>
+        <div class="formGroup">
+            <div class="headerInput">Password</div>
+            <input ngModel name ="password" type="password" placeholder="password"><br>
+      </div>
+
+      <button type="submit">register</button>
+    </form>
+
+    <h1>All member</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>password</th>
+          <th>email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of allUsers">
+          <!-- <td>{{ user._id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.password }}</td>
+          <td>{{ user.email }}</td> -->
+        </tr>
+      </tbody>
+    </table>
+</div>

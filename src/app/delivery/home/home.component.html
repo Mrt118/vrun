@@ -1,0 +1,98 @@
+<div class="wrapper magin-l-18em">
+
+  <div class="headertext">
+    <div class="hdtext float-l">
+      <p class="color-3">Your Event</p>
+      <h2>Darft Event</h2>
+    </div>
+    <div class="hdtext float-l">
+      <div class="margin-t-r">
+        <!-- <a routerLink="/create" routerLinkActive="active">
+          <button class="float-r btn btn-blueStye">Create Event</button>
+        </a> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="ogzbar">
+
+    <div class="middleCard wmdCard100 margin-r3p">
+      <div class="headmiddleCard">
+        <div class="hdtext float-l fontsize-m">
+          <p>Event</p>
+        </div>
+        <div class="hdtext float-l">
+          <div class="text-right fontsize-s link-readall">
+          </div>
+        </div>
+      </div>
+
+      <div class="contentmiddleCard" *ngFor="let e of darft">
+        <div class="eventCon">
+          <div class="eventPic float-l">
+
+          </div>
+          <div class="eventName float-l">
+            <h3>{{e.eventName}}</h3>
+            <div class="color-3 fontsize-s">
+              {{ e.startDate | date:'dd/MM/yy' }} - {{e.endDate | date:'dd/MM/yy'}}
+            </div>
+          </div>
+          <div class="float-r">
+            <form [formGroup]="statusForm" (ngSubmit)="status(e._id)" name="favForm">
+              <input type="hidden" formControlName="event_id" name="event_id" [value]="e._id">
+
+              <button class="btn btn-non" type="submit">
+                <div>
+                  <i class="fas fa-upload"></i>
+                </div>
+              </button>
+            </form>
+
+            <div class='toggle' id='switch'>
+              <div class='toggle-text-off'>OFF</div>
+              <div class='glow-comp'></div>
+              <div class='toggle-button'></div>
+              <div class='toggle-text-on'>ON</div>
+          </div>
+
+
+          </div>
+        </div>
+        <div class="eventCon float-l">
+          <div class="eventStat text-center color-3">
+            <div class="eventStat-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <div class="eventStat-d fontsize-s">
+              {{e.goldofrun}}
+            </div>
+          </div>
+          <div class="eventStat text-center color-3">
+            <div class="eventStat-icon">
+              <i class="fas fa-shoe-prints"></i>
+            </div>
+            <div class="eventStat-d fontsize-s">
+              {{e.distances.distance}} Km.
+            </div>
+          </div>
+          <div class="eventStat text-center color-3">
+            <div class="eventStat-icon">
+                <i class="far fa-clock"></i>
+            </div>
+            <div class="eventStat-d fontsize-s">
+              {{e.runTime}}
+            </div>
+          </div>
+          <div class="eventStat text-center color-3">
+            <div class="eventStat-icon">
+              <i class="fab fa-btc"></i>
+            </div>
+            <div class="eventStat-d fontsize-s">
+              {{e.distances.price}} ฿
+            </div>
+          </div>
+        </div>
+      </div>
+  </div><!--  end ogzbar -->
+</div>
